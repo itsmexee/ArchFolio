@@ -33,7 +33,7 @@ const PORTFOLIO_CONFIG = {
       year: "2026",
       location: "Lahore, Pakistan",
       software: "Revit • SketchUp • D5 Render",
-      image: "assets/webp/1.webp",
+      image: "assets/webp/webp/1.webp",
       description: "An intergenerational architectural campus uniting an orphanage and senior living sanctuary around shaded brick courtyards, passive cross-ventilation, and shared community gardens."
     },
     {
@@ -42,7 +42,7 @@ const PORTFOLIO_CONFIG = {
       year: "2026",
       location: "DHA Lahore",
       software: "3ds Max • Enscape • Photoshop",
-      image: "assets/webp/2.webp",
+      image: "assets/webp/webp/2.webp",
       description: "Minimalist residential interior featuring board-formed concrete planes, handleless walnut millwork, and warm brushed brass accents."
     },
     {
@@ -51,7 +51,7 @@ const PORTFOLIO_CONFIG = {
       year: "2026",
       location: "Islamabad",
       software: "AutoCAD • SketchUp • D5 Render",
-      image: "assets/webp/3.webp",
+      image: "assets/webp/webp/3.webp",
       description: "Ventilated terracotta screen envelope engineered to mitigate solar heat gain while casting rhythmic daylight patterns across gallery spaces."
     },
     {
@@ -60,7 +60,7 @@ const PORTFOLIO_CONFIG = {
       year: "2026",
       location: "Northern Pakistan",
       software: "Revit • D5 Render • Photoshop",
-      image: "assets/webp/4.webp",
+      image: "assets/webp/webp/4.webp",
       description: "High-altitude boutique lodge balancing local cedar craftsmanship with triple-glazed panoramic framing."
     },
     {
@@ -69,7 +69,7 @@ const PORTFOLIO_CONFIG = {
       year: "2026",
       location: "Lahore, Pakistan",
       software: "SketchUp • D5 Render • Photoshop",
-      image: "assets/webp/5.webp",
+      image: "assets/webp/webp/5.webp",
       description: "Daylit multi-story atrium combining structural steel framing, warm timber soffits, and natural stone finishes."
     }
   ],
