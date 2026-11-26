@@ -25,7 +25,7 @@ const PORTFOLIO_CONFIG = {
     slotId: "XXXXXXXXXX"
   },
 
-  // Selected Architectural Works (Linked to assets/webp/1.webp - 5.webp)
+  // Selected Architectural Works (Linked toassets/webp/webp/1.webp - 5.webp)
   projects: [
     {
       title: "The Courtyard of Two Generations",
