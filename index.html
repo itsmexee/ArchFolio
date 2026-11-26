@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@designwithzeeshan | Architecture & Visualization</title>
+  <meta name="description" content="Architectural design, BIM modeling, and 3D visualization portfolio of Muhammad Zeeshan (@designwithzeeshan). Powered by ArchFolio by Zarch Studios." />
+  <meta name="keywords" content="Architecture Portfolio, 3D Visualization, D5 Render, Revit, SketchUp, Zarch Studios, ArchFolio, Muhammad Zeeshan" />
+  <meta property="og:title" content="@designwithzeeshan | Architecture & Visualization" />
+  <meta property="og:description" content="Selected architectural works, spatial studies, and photorealistic visualizations." />
+  <meta property="og:type" content="website" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#121212',
+            concrete: '#1B1B1B',
+            brass: '#C5A059',
+            stark: '#F5F5F5'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #121212; color: #F5F5F5; }
+    .project-card img { transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1); }
+    .project-card:hover img { transform: scale(1.03); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #121212; }
+    ::-webkit-scrollbar-thumb { background: #2E2E2E; }
+    ::-webkit-scrollbar-thumb:hover { background: #C5A059; }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brass selection:text-charcoal">
+
+  <!-- Sticky Navigation -->
+  <header class="sticky top-0 z-40 bg-charcoal/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" id="nav-handle" class="font-display font-bold tracking-tight text-lg text-stark hover:text-brass transition"></a>
+      <nav class="flex items-center gap-6 text-xs md:text-sm text-neutral-400">
+        <a href="#work" class="hover:text-brass transition">Work</a>
+        <a href="#practice" class="hover:text-brass transition">Practice</a>
+        <a href="#contact" class="hover:text-brass transition">Contact</a>
+        <a id="nav-use-template" target="_blank" rel="noopener" class="hidden sm:inline-block px-3 py-1.5 border border-brass/50 text-brass text-xs hover:bg-brass hover:text-charcoal transition">
+          Use Free Template
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-concrete border border-white/10 text-[11px] uppercase tracking-[0.2em] text-brass mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-brass"></span>
+      <span id="hero-role"></span>
+    </div>
+    <h1 id="hero-name" class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-stark mb-6"></h1>
+    <p id="hero-tagline" class="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-10"></p>
+    <div class="flex flex-wrap items-center gap-4">
+      <a href="#work" class="px-7 py-3.5 bg-brass text-charcoal font-medium text-sm tracking-wide hover:bg-brass/90 transition">
+        Explore Selected Works
+      </a>
+      <a id="hero-ig" target="_blank" rel="noopener" class="px-7 py-3.5 border border-white/20 text-stark text-sm tracking-wide hover:border-brass hover:text-brass transition">
+        Instagram
+      </a>
+      <button onclick="copyEmail()" id="copy-btn" class="px-5 py-3.5 text-xs text-neutral-400 hover:text-stark transition font-mono">
+        [ Copy Email ]
+      </button>
+    </div>
+  </section>
+
+  <!-- Project Gallery -->
+  <section id="work" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 mb-10 gap-4">
+      <div>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold text-stark">Selected Works</h2>
+        <p class="text-xs text-neutral-500 mt-1">Select any project plate to inspect full details and specifications.</p>
+      </div>
+      <div id="filter-bar" class="flex flex-wrap gap-2 text-xs"></div>
+    </div>
+
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+  </section>
+
+  <!-- Discreet AdSense Container -->
+  <section id="ad-wrapper" class="hidden max-w-6xl mx-auto px-6 my-10">
+    <div class="bg-concrete/70 border border-white/10 p-4 text-center">
+      <span class="block text-[10px] uppercase tracking-[0.2em] text-neutral-600 mb-2">Sponsored Resource</span>
+      <div id="adsense-slot" class="min-h-[90px] flex items-center justify-center text-xs text-neutral-500"></div>
+    </div>
+  </section>
+
+  <!-- Practice & Capabilities -->
+  <section id="practice" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-brass">Capabilities</span>
+        <h3 class="font-display text-2xl font-semibold text-stark mt-2 mb-3">Design & Visualization Stack</h3>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          From initial conceptual massing and municipal working drawings to atmospheric 3D renders and post-production.
+        </p>
+      </div>
+      <div id="skills-list" class="md:col-span-2 flex flex-wrap gap-3 items-start content-start"></div>
+    </div>
+  </section>
+
+  <!-- Contact & Open-Source Attribution Footer -->
+  <footer id="contact" class="border-t border-white/10 bg-concrete/40">
+    <div class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-brass">Commissions & Collaborations</span>
+        <h4 class="font-display text-2xl md:text-3xl font-semibold text-stark mt-2">Start a Conversation</h4>
+        <p id="footer-location" class="text-sm text-neutral-400 mt-1"></p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a id="footer-email" class="px-6 py-3 bg-stark text-charcoal font-medium hover:bg-brass transition"></a>
+        <a id="footer-linkedin" target="_blank" rel="noopener" class="px-6 py-3 border border-white/20 hover:border-brass transition">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 py-6 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+        <div>
+          <span>Powered by </span>
+          <a id="footer-product-link" target="_blank" rel="noopener" class="text-stark hover:text-brass font-medium underline underline-offset-4">ArchFolio</a>
+          <span> - An open-source product by </span>
+          <a id="footer-studio-link" target="_blank" rel="noopener" class="text-stark hover:text-brass font-medium">Zarch Studios</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a id="footer-product-email" class="hover:text-brass transition">Product Support</a>
+          <a href="privacy.html" class="hover:text-brass transition">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Project Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-neutral-400 hover:text-brass text-xs tracking-widest uppercase border border-white/20 px-4 py-2 transition">
+      Close [ESC]
+    </button>
+    <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+      <div class="lg:col-span-2 bg-concrete border border-white/10 overflow-hidden">
+        <img id="lb-img" src="" alt="" class="w-full max-h-[75vh] object-contain mx-auto" />
+      </div>
+      <div class="space-y-4">
+        <span id="lb-cat" class="text-xs uppercase tracking-widest text-brass"></span>
+        <h3 id="lb-title" class="font-display text-2xl font-bold text-stark"></h3>
+        <p id="lb-desc" class="text-sm text-neutral-300 leading-relaxed"></p>
+        <div class="pt-4 border-t border-white/10 text-xs text-neutral-400 space-y-2">
+          <p><strong class="text-stark">Location:</strong> <span id="lb-loc"></span></p>
+          <p><strong class="text-stark">Year:</strong> <span id="lb-year"></span></p>
+          <p><strong class="text-stark">Software:</strong> <span id="lb-soft"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script>
+    document.title = `${PORTFOLIO_CONFIG.handle} | ${PORTFOLIO_CONFIG.role}`;
+    document.getElementById('nav-handle').textContent = PORTFOLIO_CONFIG.handle;
+    document.getElementById('nav-use-template').href = PORTFOLIO_CONFIG.product.githubRepoUrl;
+    document.getElementById('hero-role').textContent = `${PORTFOLIO_CONFIG.role} • ${PORTFOLIO_CONFIG.location}`;
+    document.getElementById('hero-name').textContent = PORTFOLIO_CONFIG.name;
+    document.getElementById('hero-tagline').textContent = PORTFOLIO_CONFIG.tagline;
+    document.getElementById('hero-ig').href = PORTFOLIO_CONFIG.instagram;
+
+    document.getElementById('footer-location').textContent = `Based in ${PORTFOLIO_CONFIG.location} • Available for global commissions`;
+    const emailBtn = document.getElementById('footer-email');
+    emailBtn.textContent = PORTFOLIO_CONFIG.email;
+    emailBtn.href = `mailto:${PORTFOLIO_CONFIG.email}`;
+    document.getElementById('footer-linkedin').href = PORTFOLIO_CONFIG.linkedin;
+
+    document.getElementById('footer-product-link').href = PORTFOLIO_CONFIG.product.githubRepoUrl;
+    document.getElementById('footer-studio-link').href = PORTFOLIO_CONFIG.product.studioUrl;
+    document.getElementById('footer-product-email').href = `mailto:${PORTFOLIO_CONFIG.product.productEmail}?subject=ArchFolio%20Inquiry`;
+
+    function copyEmail() {
+      navigator.clipboard.writeText(PORTFOLIO_CONFIG.email);
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '[ Copied! ]';
+      btn.classList.add('text-brass');
+      setTimeout(() => {
+        btn.textContent = '[ Copy Email ]';
+        btn.classList.remove('text-brass');
+      }, 2000);
+    }
+
+    const skillsList = document.getElementById('skills-list');
+    PORTFOLIO_CONFIG.skills.forEach(skill => {
+      const span = document.createElement('span');
+      span.className = 'px-4 py-2 bg-concrete border border-white/10 text-xs text-neutral-300 hover:border-brass/50 transition';
+      span.textContent = skill;
+      skillsList.appendChild(span);
+    });
+
+    const categories = ['All', ...new Set(PORTFOLIO_CONFIG.projects.map(p => p.category))];
+    const filterBar = document.getElementById('filter-bar');
+    const grid = document.getElementById('project-grid');
+
+    function renderProjects(selectedCat = 'All') {
+      grid.innerHTML = '';
+      const filtered = selectedCat === 'All'
+        ? PORTFOLIO_CONFIG.projects
+        : PORTFOLIO_CONFIG.projects.filter(p => p.category === selectedCat);
+
+      filtered.forEach(proj => {
+        const card = document.createElement('article');
+        card.className = 'project-card group cursor-pointer bg-concrete border border-white/10 overflow-hidden';
+        card.onclick = () => openLightbox(proj);
+        card.innerHTML = `
+          <div class="aspect-[16/10] overflow-hidden bg-neutral-900">
+            <img src="${proj.image}" alt="${proj.title}" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6 flex justify-between items-start gap-4">
+            <div>
+              <span class="text-[11px] uppercase tracking-widest text-brass">${proj.category}</span>
+              <h3 class="font-display text-lg font-semibold text-stark mt-1 group-hover:text-brass transition">${proj.title}</h3>
+              <p class="text-xs text-neutral-500 mt-1">${proj.software}</p>
+            </div>
+            <span class="text-xs text-neutral-500 font-mono">${proj.year}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.textContent = cat;
+      btn.className = 'px-3.5 py-1.5 border border-white/15 text-neutral-400 hover:border-brass hover:text-stark transition';
+      btn.onclick = () => {
+        document.querySelectorAll('#filter-bar button').forEach(b => b.classList.remove('border-brass', 'text-brass'));
+        btn.classList.add('border-brass', 'text-brass');
+        renderProjects(cat);
+      };
+      filterBar.appendChild(btn);
+    });
+    filterBar.firstChild.classList.add('border-brass', 'text-brass');
+    renderProjects();
+
+    function openLightbox(proj) {
+      document.getElementById('lb-img').src = proj.image;
+      document.getElementById('lb-cat').textContent = proj.category;
+      document.getElementById('lb-title').textContent = proj.title;
+      document.getElementById('lb-desc').textContent = proj.description;
+      document.getElementById('lb-loc').textContent = proj.location || '';
+      document.getElementById('lb-year').textContent = proj.year;
+      document.getElementById('lb-soft').textContent = proj.software;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    if (PORTFOLIO_CONFIG.adsense.enabled && PORTFOLIO_CONFIG.adsense.clientId) {
+      document.getElementById('ad-wrapper').classList.remove('hidden');
+      const adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${PORTFOLIO_CONFIG.adsense.clientId}`;
+      adScript.crossOrigin = 'anonymous';
+      document.head.appendChild(adScript);
+
+      document.getElementById('adsense-slot').innerHTML = `
+        <ins class="adsbygoogle"
+             style="display:block;width:100%"
+             data-ad-client="${PORTFOLIO_CONFIG.adsense.clientId}"
+             data-ad-slot="${PORTFOLIO_CONFIG.adsense.slotId}"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+      `;
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  </script>
+</body>
+</html>
